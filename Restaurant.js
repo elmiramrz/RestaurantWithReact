@@ -7,7 +7,7 @@ export default function Restaurant (props) {
     const [loading,setLoading] = useState(true);
     useEffect(() => {
         setLoading(true)
-        fetch(`https://murmuring-beyond-98547.herokuapp.com/api/restaurants/${props.id}`).then(res => res.json()).then(data => {
+        fetch(`https://herokuurl/restaurants/${props.id}`).then(res => res.json()).then(data => {
             setLoading(false);
             // if our data contains an _id, we have successfully retrieved a restaurant
             (data.hasOwnProperty("_id")) ? setRestaurant(data) : setRestaurant(null)
